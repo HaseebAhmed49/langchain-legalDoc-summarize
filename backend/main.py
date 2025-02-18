@@ -102,7 +102,7 @@ async def extract_clauses(file: UploadFile = File(...), transform: bool = False)
 
         return {
             "summary": summary,
-            "transformed_summary": transformed_summary if transform else "Already explained in Simple Language"
+            "transformed_summary": transformed_summary if transform else None
         }
 
     except Exception as e:
