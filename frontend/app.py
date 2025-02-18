@@ -18,7 +18,7 @@ if uploaded_file is not None:
     if st.button("Extract Legal Clauses 🚀"):
         with st.spinner("Analyzing contract... ⏳"):
             files = {"file": (uploaded_file.name, uploaded_file.getvalue())}
-            response = requests.post(API_URL, files=files)
+            response = requests.post(API_URL, files=files,params={"transform": True})
 
             if response.status_code == 200:
                 summary = response.json()["summary"]
